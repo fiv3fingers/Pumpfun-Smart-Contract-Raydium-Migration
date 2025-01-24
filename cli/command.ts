@@ -38,14 +38,14 @@ programCommand("launch").action(async (directory, cmd) => {
 });
 
 programCommand('addWl')
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .action(async (directory, cmd) => {
-        const { env, keypair, rpc } = cmd.opts();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  .action(async (directory, cmd) => {
+    const { env, keypair, rpc } = cmd.opts();
 
-        await setClusterConfig(env, keypair, rpc)
+    await setClusterConfig(env, keypair, rpc)
 
-        await addWl();
-    });
+    await addWl();
+  });
 
 programCommand("swap")
   .option("-t, --token <string>", "token address")
@@ -109,12 +109,12 @@ function programCommand(name: string) {
     .option(
       "-r, --rpc <string>",
       "Solana cluster RPC name",
-      "https://devnet.helius-rpc.com/?api-key=7387c4ee-fe6a-43a6-96ea-05e6534aa500 "
+      "DevNetRPC"
     )
     .option(
       "-k, --keypair <string>",
       "Solana wallet Keypair Path",
-      "./keys/EgBcC7KVQTh1QeU3qxCFsnwZKYMMQkv6TzgEDkKvSNLv.json"
+      "keypairt address" //./keys/EgBcC7KVQTh1QeU3qxCFsnwZKYMMQkv6TzgEDkKvSNLv.json
     );
 }
 

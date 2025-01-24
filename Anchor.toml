@@ -16,10 +16,10 @@ url = "https://api.apr.dev"
 
 [provider]
 cluster = "DEVNET_RPC"
-wallet = "./keys/admin.json"
+wallet = "Keypair address"
 
 [scripts]
-build = "rm -rf target && anchor build && mkdir -p target/deploy && cp ./keys/program/3uHJMHzeiqdqQ3LNc5bNVxuCp224HGtStPkv1JUEcabr.json ./target/deploy/pumpfun-keypair.json"
+build = "rm -rf target && anchor build"
 build-with-so = "anchor run build && ln -s $HOME/.cargo/target/sbf-solana-solana/release/pumpfun.so $PWD/target/deploy/pumpfun.so"
 test = "./tests/anchor-tests-runner.sh"
 
