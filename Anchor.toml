@@ -15,7 +15,7 @@ pumpfun = "ApRXrsZcqKHzQFrdYYKcPhe66S5oHMwWqnC9DZVqiZFM"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "https://devnet.helius-rpc.com/?api-key=7387c4ee-fe6a-43a6-96ea-05e6534aa500"
+cluster = "DEVNET_RPC"
 wallet = "./keys/admin.json"
 
 [scripts]
