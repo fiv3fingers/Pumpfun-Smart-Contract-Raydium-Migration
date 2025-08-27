@@ -1,81 +1,31 @@
-# pumpfun fork program
+# 💊 PumpFun Solana Smart Contract  
 
-## Setup
+The **Pump.fun Smart Contract Fork** is a cutting-edge platform designed to empower users in creating and managing tokens, markets, and liquidity pools on **Raydium/Meteora**. This enhanced version extends beyond the core features of Pump.fun, offering advanced functionalities for **token authority management, custom token properties, whitelisting, and liquidity control**.  
 
-Only needed once per chain
+## ✨ Key Features  
 
-## Deployment
+- **Token Management**: Create fully customizable tokens (name, symbol, image) with optional revocable token authority.  
+- **Market Creation**: Seamless market setup for token trading.  
+- **Pool Management**: Add/remove liquidity on Raydium, manage SPL token burns efficiently.  
+- **Dashboard**: Comprehensive token listings with real-time insights.  
+- **Discord Integration**: Instant notifications via **Discord webhooks**.  
+- **Fee Handling**: Integrated fee structure for contract usage.  
 
-Program is deployed
+## 🚀 Latest Enhancements  
 
-## Config
+### 🔄 **Raydium Migration**  
+Effortlessly migrate liquidity to **Meteora or Raydium** using **Cross-Program Invocation (CPI) calls**. This ensures smooth interoperability and efficient asset movement between **Solana's top liquidity platforms**.  
 
-Call the `configure` instruction to set the config for the program +
-Sets the fee amounts and allowed launch parameters.
+### ✅ **Whitelisting System**  
+Implement **granular access control** by **whitelisting users** with specific permissions. This feature allows project owners to define different levels of authority, providing enhanced **security and flexibility** in token and pool management.  
 
-## Prerequites
+### ⚠️ **Spam Detection & Prevention**  
+A **smart spam detection system** automatically identifies and handles malicious activities in **OpenBook markets**. This ensures a fair and **secure trading environment** by mitigating spam transactions and market manipulation.  
 
-Install Rust, Solana, and AVM: https://solana.com/docs/intro/installation
-
-Remember to install anchor v0.30.1.
-
-## Quick Start
-
-### Build the program
-
-```bash
-# build the program
-anchor run build
-
-# For those who use a different CARGO_TARGET_DIR location (like me I used ${userHome}/.cargo/target)
-# then you'll need to move the <program-name>.so back to $PWD/target/deploy/<program-name.so>.
-
-# E.g:
-ln -s $HOME/.cargo/target/sbf-solana-solana/release/pumpfun.so $PWD/target/deploy/pumpfun.so
-```
-
-### Test program on devnet
-
-Set the cluster as devnet in `Anchor.toml`:
-```bash
-[provider]
-cluster = "<DEVNET_RPC>"
-```
-
-Deploy program:
-```bash
-anchor deploy
-```
-
-#### Use CLI to test the program
-
-Initialize program:
-```bash
-yarn script config
-```
-
-Launch a token:
-```bash
-yarn script launch
-```
-
-Add Whitelist
-```bash
-yarn script addWl
-```
-
-Swap SOL for token:
-```bash
-yarn script swap -t <TOKEN_MINT> -a <SWAP_AMOUNT> -s <SWAP_DIRECTION>
-```
-`TOKEN_MINT`: You can get token mint when you launch a token
-`SWAP_AMOUNT`: SOL/Token amount to swap
-`SWAP_DIRECTION`: 0 - Buy token, 1 - Sell token
-
-### Test program on MainNet
-#### Use CLI to test the program 
-Migrate token to raydium once the curve is completed:
-```bash
-yarn script migrate -t <TOKEN_MINT>
-```
-`TOKEN_MINT`: mint address of the token to be launched on the raydium
+## 🤝 Proof of Work
+[Devnet Contract Address](https://solscan.io/account/4HPScSCMU53uTorshv5dGjUQLw9cKJy3MPWFAKHG5ywc?cluster=devnet)
+- [Config](https://solscan.io/tx/5uxFQTEnipj4PLsLSeoo1fdc3c8TPP3FCt3D4vTrBNcB2d2uFwLiSD1ssZ9TRaaJWX8giPx86tZGwKWiEFhzNCp4?cluster=custom&customUrl=https://api.devnet.solana.com)
+- [Pool Creation](https://solscan.io/tx/5rkgtsM7kE9Ra5yEjgxUr8rKnq7S7fwfCQZTMXGuXEX9364FEewycFhegaCqdDo7cVsgomsrZ7F82TUSjr2kKikf?cluster=custom&customUrl=https://api.devnet.solana.com)
+- [Trading(including fee)](https://solscan.io/tx/5C4hREN4e8YJvGHxSLMEjMgH99fsA3Q8zkenUEko9dN1J5qbzgEPCpGKxjLJZiZ2oMRQxmjqx54afrpZyWyEQiRo?cluster=custom&customUrl=https://api.devnet.solana.com)
+- [Migration to Meteora](https://solscan.io/tx/3G43Gty6JwmGjyToKoeKAQLwuC42AXrCw7gp2KFnZrdahEepRnU4ZoKtN6wfjoxH9FnFrPToiPbMmDoeAWcXodQF?cluster=devnet)
+- [LP Lock](https://solscan.io/tx/jeMaznRax6w37GDco581AnZnU6sqAinwRiHD5nBC19fpNUzUzKvPwCey7aynHUydzMXV7kDdHiBY52eCcETeoyV?cluster=devnet)
